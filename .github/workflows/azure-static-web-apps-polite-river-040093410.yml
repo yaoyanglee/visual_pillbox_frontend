@@ -52,6 +52,11 @@ jobs:
           output_location: "dist/synapxe-trailblazer" # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
+      # List the directory contents to verify where the dist folder is
+      - name: Verify dist folder location
+        run: |
+          echo "Listing the directory contents..."
+          ls -R dist/
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
