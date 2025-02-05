@@ -25,7 +25,10 @@ jobs:
       - name: Create environment.production.ts from GitHub Secret
         run: |
           mkdir -p src/environments
-          echo "${{ secrets.ENV_PRODUCTION }}" > src/environments/environment.production.ts
+          echo "${{ secrets.ANGULAR_ENV_PRODUCTION }}" > src/environments/environment.production.ts
+      - name: Create environment.ts from Github Secret
+      - run: |
+          echo "${{ secrets.ANGULAR_ENV}}" > src/environments/environment.ts
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
       - name: Get Id Token
