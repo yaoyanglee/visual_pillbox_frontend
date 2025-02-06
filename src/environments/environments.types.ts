@@ -1,6 +1,3 @@
-
-
-
 export type Environment = {
   PRODUCTION:boolean,
   BACKEND:string,
