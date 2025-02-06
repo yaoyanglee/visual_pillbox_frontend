@@ -104,7 +104,7 @@ export class DemoComponent implements OnInit{
 
   async extractImage(){
     const res = await axios.get<string[]>(
-      `${environment.BACKEND2}/api/extract`,
+      `${environment}/api/extract`,
       {params:{image:this.uploadedImageName}}
     )
     this.drugList=res.data
